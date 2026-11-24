@@ -1,0 +1,19 @@
+[plugin]
+id = "by.dzedahey.steam-be"
+name = "Steam па-беларуску by Dzed Ahey"
+version = "0.8.2"
+author = "Dzed Ahey"
+description = "Неафіцыйны беларускі пераклад кліента, крамы і супольнасці Steam. Аўтар: Dzed Ahey."
+
+[backend]
+entry = "backend/main.lua"
+sources = ["backend/**/*.lua"]
+
+[frontend]
+entry = "frontend/index.tsx"
+
+[webkit]
+entry = "webview/preload.ts"
+
+[compiler]
+output_path = "auto"
