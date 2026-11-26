@@ -27,7 +27,7 @@ function mainWorld(P: Record<string, string[][]>, D: Record<string, any[][]>, TB
 	const LOG = '[steam-be web]';   // асобна: гэты код выконваецца ўжо ў самой старонцы
 	const w = window as any;
 	if (w.__beWeb) return;
-	const S: any = (w.__beWeb = { v: '0.8.2', tags: 0, get: 0, dom: 0, lang: '', url: location.href });
+	const S: any = (w.__beWeb = { v: '0.8.3', tags: 0, get: 0, dom: 0, lang: '', url: location.href });
 	const TIME: any = (w.__beTime = Object.assign({}, TM || {}, { main: tMain }));
 	const HO = Object.prototype.hasOwnProperty;
 	const h = (s: string) => { let x = 0x811c9dc5; for (let i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 0x01000193) >>> 0; } return (x % 2176782336).toString(36); };
@@ -233,7 +233,7 @@ function mainWorld(P: Record<string, string[][]>, D: Record<string, any[][]>, TB
 	}
 	// 2d. Зоны. Па-за імі тэкст не чапаем ніколі.
 	const HOME = '.community_recommendations_block .view_more, .community_recommendations_block .hours, .content_hub_capsule_ctn .label, .info_ctn .reason, .ds_flag, #recommended_by_deep_dive_title, .home_content h2, .home_content_reason, .home_content .btnv6_white_transparent, .home_section_title, .home_section_subtitle, .home_title_ctn, .title_grid, .see_more_link, .home_tabs_row_ctn, .tab_controls_ctn, .home_gift_card_text, .more_content, .more_content_desc, #LoadingText, .topseller_title, .topseller_subtext, .main_reason, .tab_item_release_date, .broadcast_live_stream_icon, .discount_aria_label, .game_review_summary, .review_count';
-	const APP = '.banner_open_in_steam, .page_title_area .btnv6_blue_hoverfade, .grid_label, #appHeaderGridContainer .grid_content, .user_reviews_summary_row .subtitle, .user_reviews_summary_row .nonresponsive_hidden, .responsive_reviewdesc_short, .release_date, .dev_row .subtitle, .responsive_block_header, .glance_tags_label, #reviewsHeader_responsive, .gamehighlight_desktopcarousel, #queueActionsCtn, .game_area_purchase_game > h1, .game_area_purchase_game > h2, .btn_addtocart, #gameAreaDLCSection .gradientbg, #category_block, .game_area_details_specs_ctn .label, #shareEmbedRow, #LanguagesHeader, .responsive_banner_link_title, #languageTable .checkcol, #languageTable .ellipsis, .all_languages, .Agency, .block_title, .communitylink_points_shop_item, .linkbar, #genresAndManufacturer b, .game_page_autocollapse_readmore, .game_area_sys_req strong, .sysreq_tab, #game_area_metalink, .steam_curators_block .block_header, #aboutThisGame h2:first-of-type, .game_area_sys_req_note, #EmbedModal, .app_tag_modal_right, .app_tag_modal_left, #game_area_reviews > h2, .breadcrumbs .blockbg > a:first-child, .notice_box_content, .franchise_notice .franchise_name, .game_area_already_owned, .game_area_play_stats .details_block, #review_create, .queue_menu_flyout, .DRM_notice, .recommendation_reasons, .responsive_apppage_details_right.heading, .game_purchase_options_editions_header_title, .package_contents > b, .package_contents_show_more, .btn_packageinfo, .package_in_library_flag, .bundle_label, .collectionComplete, .dlc_highlight_reason, .game_area_dlc_price, #dlc_footer, .sys_req > h2, .game_area_sys_req li, .breadcrumbs .blockbg > a[href*="/genre/"], .breadcrumbs .blockbg > a[href*="/franchise/"], #genresAndManufacturer a[href*="/genre/"], .app_tag_modal_content, .game_area_already_owned_btn, .package_contents_show_less, #earlyAccessHeader, .early_access_banner, .game_pt_note, .family_info, #game_area_content_descriptors > h2, #game_area_content_descriptors > p, .game_area_description > h2:not(.bb_tag)';
+	const APP = '.banner_open_in_steam, .page_title_area .btnv6_blue_hoverfade, .grid_label, #appHeaderGridContainer .grid_content, .user_reviews_summary_row .subtitle, .user_reviews_summary_row .nonresponsive_hidden, .responsive_reviewdesc_short, .release_date, .dev_row .subtitle, .responsive_block_header, .glance_tags_label, #reviewsHeader_responsive, .gamehighlight_desktopcarousel, #queueActionsCtn, .game_area_purchase_game > h1, .game_area_purchase_game > h2, .btn_addtocart, #gameAreaDLCSection .gradientbg, #category_block, .game_area_details_specs_ctn .label, #shareEmbedRow, #LanguagesHeader, .responsive_banner_link_title, #languageTable .checkcol, #languageTable .ellipsis, .all_languages, .Agency, .block_title, .communitylink_points_shop_item, .linkbar, #genresAndManufacturer b, .game_page_autocollapse_readmore, .game_area_sys_req strong, .sysreq_tab, #game_area_metalink, .steam_curators_block .block_header, #aboutThisGame h2:first-of-type, .game_area_sys_req_note, #EmbedModal, .app_tag_modal_right, .app_tag_modal_left, #game_area_reviews > h2, .breadcrumbs .blockbg > a:first-child, .notice_box_content, .franchise_notice .franchise_name, .game_area_already_owned, .game_area_play_stats .details_block, #review_create, .queue_menu_flyout, .DRM_notice, .recommendation_reasons, .responsive_apppage_details_right.heading, .game_purchase_options_editions_header_title, .package_contents > b, .package_contents_show_more, .btn_packageinfo, .package_in_library_flag, .bundle_label, .collectionComplete, .dlc_highlight_reason, .game_area_dlc_price, #dlc_footer, .sys_req > h2, .game_area_sys_req li, .breadcrumbs .blockbg > a[href*="/genre/"], .breadcrumbs .blockbg > a[href*="/franchise/"], #genresAndManufacturer a[href*="/genre/"], .app_tag_modal_content, .game_area_already_owned_btn, .package_contents_show_less, #earlyAccessHeader, .early_access_banner, .game_pt_note, .family_info, #game_area_content_descriptors > h2, #game_area_content_descriptors > p, .game_area_description > h2:not(.bb_tag), .game_purchase_discount_countdown, .ds_completetheset, .package_contents > div';
 	// Кіраўніцтвы: галоўная і спіс кіраўніцтваў гульні, стварэнне і рэдагаванне свайго.
 	// Назва кіраўніцтва і загалоўкі ўжо створаных раздзелаў — тэкст карыстальніка, у зону не ўваходзяць.
 	const GUIDES = '.apphub_Guides .subtitle_ctn, .apphub_Guides #AppHubSearch .searchTextContainer, .guides_home_section_title, .guides_home_view_all_link, .guide_home_category_name, .guide_home_category_count, .apphub_responsive_menu .subheader, .apphub_ResponsiveMenuItem, .editGuideHeader, .editGuidePageTitle > span, .newCollectionDesc, #SubmitGuideForm, .editGuidePageControls, .editGuidePageSectionTitle, .editGuidePageSectionDesc, .editGuideEmptyDetailBox, .editGuideTOCSectionControls, .editGuideTOCControls, .editGuideTOCSection.empty .editGuideTOCSectionTitle, .editGuideSubSectionPageControlsContainer, .editGuideChangesDesc, .editGuideSubSectionLabel, .editGuideSubSectionPreviewImagesDesc, #UploadPreviewImages, .editGuideInsertOptionControls';
@@ -254,7 +254,7 @@ function mainWorld(P: Record<string, string[][]>, D: Record<string, any[][]>, TB
 		// чарга рэкамендацый (store.steampowered.com/explore)
 		['Список рекомендаций', '.page_header_ctn .header_area, .discovery_queue_apps, .discovery_queue_customize_ctn, .explore_rightcol_box, .rightcol > h2, .leftcol > .pageheader, .faq_question, .faq_answer, .discovery_queue_overlay_message, .dq_item_reason'],
 		['Сообщество', GUIDES + ', .appHubSearchTextForm, .discussionSearchTextContainer, .apphub_CardRating, .apphub_CardControls, .received_compensation, .blotter_page_title, .friendslist_entry_content, .friends_link_block, .friends_add_block, .friends_launch_area .webchat_launch, .profile_friends_ingame, .blotter_eventsblock, #blotter_statuspost_submit, #blotter_appselect_app_activeoption, .blotter_author_block, .blotter_daily_rollup_line, .blotter_control_container, .blotter_viewallcomments_container, .commentthread_header, .commentthread_subscribe_ctn, .commentthread_entry_submitlink, .found_helpful, .vote_header, .control_block, .ss_spoiler_text, .share_ctn, #SharePopup, .dynamiclink_author, .community_home_header, .community_home_app_shortcuts_list_header, .new_items_num, .community_home_search_title, .apphub_sectionTab, .responsive_tab_select, .community_home_sort_options, #HeaderUserBreadcrumbs, .sharedfiles_usercontrols_label, .sharedfiles_usercontrol_ctn label, [id^="sharedfiles_filterselect_"][id$="_activeoption"], #sharedfiles_filterselect_app_option_0, [id^="sharedfiles_view_option_"], [id^="sharedfiles_filterselect_display_option_"], [id^="sharedfiles_privacy_option_"], .sectionTabs, #ScreenshotManagementControlsTop, #ScreenshotManagementControlsBottom, #NoItemsContainer, #BackToTop, #imgWallLoadingPageModal, #confirmBatchModalContents, #noSelectedShotsModalContents, #privacyFailedModalContents, #confirmUnlinkAccountModalContents, #confirmShowVideoPrivacyModalContents, .video_footer_ctn, #instructions_main, .image_grid_title, .rightSectionTopTitle, .workshopBrowsePaging, .rightbox_list_option_content, #hover_user_action_history, .ugc_show_warning_image, .profile_small_header_location, .review_stat .giantNumberSubhead, .review_list h1, .review_box .header, .vote_header .hours, .vote_header .title, .early_access_review, .review_box .posted, .control_block, .dselect_container, .dropcontainer, .review_app_actions, .review_gameoptions, .responsive_review_gameoptions, .review_page_content .panel, .ratingBar, .playTime, .recommendation_date, .ratingSummary, #ReviewEdit, .review_edit_received_compensation, .review_page_content .friendBlock + div, .commentthread_comment_timestamp, .sharedfiles_item_page_header .breadcrumbs, #bannedNotification, #incompatibleNotification, .currentVisibility, .visibilityDesc, #ItemControls, #JustFavorited, .sidebar .panel .title, .sidebar .general_btn, .sidebar .rightSectionTopTitle, .detailsStatsContainerLeft, .detailsStatsContainerRight, .stats_table, .commentthread_workshop_authorbadge, #AddToCollectionDialogLoading, #AddToCollectionDialogNoEligibleCollections, .descriptionLabel, .item_text_edit_button, .ratingSection, .guideAuthors, .workshopTags, .friends_favorited_text, .commentTabs, #GuideTableOfContents, #DeveloperComments, .responsive_local_menu .btnv6_blue_hoverfade, #visibilityselect, .friendBlock .friendSmallText, .share_controls_steam, .share_controls_page_link, .market_headertip, .inventory_rightnav, #inventory_more_dselect_container, #inventory_more_droplist, .filter_ctn, #inventory_pagecontrols, .inventory_msg_content, .pending_gifts_header, #gift_error_modal_content, #gift_unpack_install_modal, .giftcard_billing_required, #billing_info_form label, #market_sell_dialog, #market_buynow_dialog, #market_removelisting_dialog, #market_advancedsearch_dialog, .market_dialog_content, .trade_protection_description, .trade_protection_example, .market_headertip_text, .profile_subpage_selector, .tradeoffer_welcome_ctn, .rightcol_controls, .newtradeoffer, .inventory_history_pagingrow, .tradehistory_date, .tradehistory_event_description, .market_header_text, .user_info, #marketBetaNoteCtn, #myMarketTabs, .market_tab_well_tab_contents, .item_market_action_button_contents, .my_market_header, .market_listing_table_message, #escrow_description, #market_search_advanced_show, .market_search_sidebar_contents, .market_search_sidebar_section_tip_small, .market_show_more_games, .market_listing_table_header, #popularItemsMore, .market_paging_summary, .market_title_text, .apphub_Chat, .apphub_Stats, .apphub_friends_who_played_recently_title, .apphub_friend_block .ellipsis, .found_helpful, .apphub_CardContentType, .fiveStar, .date_posted, .responsive_tab_control, .forum_newtopic_header, .subforum_radios_label, .subforum_radio_topics, .forum_paging_summary, .forum_topic_lastpost, .forum_pagesize_options, .forum_search_notice, .forum_subscribe_button, .rightcol_minor_text, .forum_list_postcount, .forum_list_name, .rightbox .weblink, .rightbox_content_header, .breadcrumb_current_page, .forum_topic_pinned_notice, .popup_menu_item, .forum_comment_action, .forum_audit, .commentthread_entry_autosubscribe, .topicstats_label, .forum_topic, .large_title, .steam_discussions_intro, #tab_general, #tab_games, #tab_tools, .discussions_view_more_link, #forum_list_general h2, .recent_game_discussion_count, .discussions_forumlist_header, .discussions_forumlist_topiccount, .discussions_forumlist_lastpost, .discussions_forumlist_forumname, .group_breadcrumbs, .discussions_searchSort, .discussion_search_pagingcontrols, .searchresult_forumname, #report_modal_content, .browseApps, .appInfo, .current_player_workshop_title, .current_player_workshop_link, .subscribeRSS, .commentsLink, .numRatings, .workshop_item_header .col_right, .change_note_link, .sidebar .panel, #JustSubscribed, .game_area_purchase_game h1, #updateKVTagsForm, .itemContents, .follower_tt, .commentthread_entry, .commentthread_comment_actions, .commentthread_textarea, #manage_friends_control, .profile_friends.title_bar, .profile_friends .title, #search_results_sentinvites_empty, #state_ignored_friends, #state_blocked_friends, #friends_coplay_ctn .description, #friends_coplay_ctn #friends_list > div, .manage_action, #search_text_box, #search_text_box_sent, .profile_groups, .broadcast_moderators_header, #friends_broadcast_moderators .profile_friends, .badge_details_set_favorite, .badge_empty_right, .new_items_num, .gamecards_inventorylink, .badge_friends_have_earned_label, .badge_card_to_collect_links, .badge_card_to_collect_info, .badge_card_set_text, .badge_friendwithgamecard_actions, .badge_title, .badge_card_to_collect_header, .gamecard_badge_progress, #inventory_more_trigger, #filter_control, .workshopLink, #no_items, .community_search_container h2, #PromptModalForm, .creatorsBlock .friendBlock span, #content form .formRow, #content p.greyText, #abbreviation_info, #link_info, #public_info, .group_create_btn, #ig_bottom #mainContents > .title, #ig_bottom #mainContents > .subtitle, .menu_panel, #profileBlock > div:first-child, .workshop_apps_paging_summary, .rightbox_list_option_content, .apphub_OtherSiteInfo, .screenshotAppDesc, .sidebar .rightSectionTitle, #GetMoreContentBtn, #action_wait, #NoMoreContent, #appHubLoadingPageModal'],
-		['Профиль', '.profile_summary_footer, .favorite_badge_description .xp, .btn_profile_action, .profile_in_game_header, .count_link_label, .profile_customization_editlink, .profile_customization_header, .myworkshop_playerName, .guide_showcase_author, .showcase_stat .label, .showcase_bodylabel, .games_played_title, #replay .stat_ctn, .profile_recentgame_header, .recentgame_quicklinks, .game_info_achievement_summary, .game_info_badge_description .xp, .published_file_link, .commentthread_header_label, #reportAbuseModal, .abuseOption, #profile_action_dropdown_link, #profile_action_dropdown .popup_menu_item, .profile_actions_follow, .persona_level, .profile_header_actions, #NamePopup, .profile_topfriends .friendBlock .friendSmallText, .profile_topfriends .friendBlock span, .game_info_details, .screenshot_showcase_stat, #abuseForm, .profile_small_header_location, .profile_in_game_header, .friends_nav, .profile_friends.title_bar, #manage_friends_control, #add_friends_button, #manage_friends, #search_results_empty, .state_block, .friend_last_online_text, .profile_xp_block, .profile_badges_sortoptions, .profile_badges_header_title, .profile_paging, .badge_title_stats_playtime, .badge_title_stats_drops, .how_to_get_card_drops_ctn, .card_drop_info_dialog, .badge_progress_info, .badge_title_playgame, a.btn_grey_black'],
+		['Профиль', '.profile_summary_footer, .favorite_badge_description .xp, .btn_profile_action, .profile_in_game_header, .count_link_label, .profile_customization_editlink, .profile_customization_header, .myworkshop_playerName, .guide_showcase_author, .showcase_stat .label, .showcase_bodylabel, .games_played_title, #replay .stat_ctn, .profile_recentgame_header, .recentgame_quicklinks, .game_info_achievement_summary, .game_info_badge_description .xp, .published_file_link, .commentthread_header_label, #reportAbuseModal, .abuseOption, #profile_action_dropdown_link, #profile_action_dropdown .popup_menu_item, .profile_actions_follow, .persona_level, .profile_header_actions, #NamePopup, .profile_topfriends .friendBlock .friendSmallText, .profile_topfriends .friendBlock span, .game_info_details, .screenshot_showcase_stat, #abuseForm, .profile_small_header_location, .profile_in_game_header, .friends_nav, .profile_friends.title_bar, #manage_friends_control, #add_friends_button, #manage_friends, #search_results_empty, .state_block, .friend_last_online_text, .profile_xp_block, .profile_badges_sortoptions, .profile_badges_header_title, .profile_paging, .badge_title_stats_playtime, .badge_title_stats_drops, .how_to_get_card_drops_ctn, .card_drop_info_dialog, .badge_progress_info, .badge_title_playgame, a.btn_grey_black, .profile_customization'],
 		['React', '[data-featuretarget]'],
 		['SSR', '#StoreTemplate, #CommunityTemplate'],   // новыя старонкі (чарты, спіс жаданага, вынікі года): толькі дакладныя радкі са слоўнікаў
 	];
@@ -262,7 +262,7 @@ function mainWorld(P: Record<string, string[][]>, D: Record<string, any[][]>, TB
 	const EXCL_REACT = 'a[href*="/app/"]';
 	const EXCL_SSR = 'a[href*="/app/"], a[href*="/sub/"], a[href*="/bundle/"], a[href*="/id/"], a[href*="/profiles/"], a[href*="/news/"], input, textarea';
 	// Супольнасць і профіль: імёны, назвы гульняў, тэксты карыстальнікаў
-	const EXCL_COMM = '.badge_card_set_title, .creatorsBlock .friendBlockContent > a, .forum_topic_name, .forum_topic_op, .searchresult_forum_link, .forum_op .content, .forum_op .topic, .commentthread_comment_author .hoverunderline, .commentthread_comment_author bdi, .apphub_friend_block .online a, .apphub_friend_block .offline a, .apphub_friend_block .in-game a, .sidebar .panel .friendBlock, .sidebar .panel .requiredItem, .tradehistory_event_description a, #gift_unpack_install_modal h2 b, .market_listing_item_name, .market_listing_game_name, .market_headertip a.market_headertip_item, [id^="guideSectionSelection_"]:not(#guideSectionSelection_0):not(#guideSectionSelection_-1), [id^="sharedfiles_filterselect_app_option_"]:not(#sharedfiles_filterselect_app_option_0), q.ellipsis, .workshopItemTitle, .review_box .content, .apphub_CardTextContent, .blotter_author_block a, .blotter_daily_rollup_line a, .blotter_voters_names a, .blotter_gamepurchase_details a, .blotter_gamepurchase_text, .dynamiclink_name, .dynamiclink_description, .dynamiclink_authorname, .commentthread_comment_text, .commentthread_comment_author, .guide_showcase_title, .favorite_badge_description .name, .game_name, .responsive_body_text, .blotter_screenshot_title, bdi, .actual_persona_name, .persona_name:not(.persona_level), .profile_summary, textarea, input, [contenteditable="true"]';
+	const EXCL_COMM = '.badge_card_set_title, .creatorsBlock .friendBlockContent > a, .forum_topic_name, .forum_topic_op, .searchresult_forum_link, .forum_op .content, .forum_op .topic, .commentthread_comment_author .hoverunderline, .commentthread_comment_author bdi, .apphub_friend_block .online a, .apphub_friend_block .offline a, .apphub_friend_block .in-game a, .sidebar .panel .friendBlock, .sidebar .panel .requiredItem, .tradehistory_event_description a, #gift_unpack_install_modal h2 b, .market_listing_item_name, .market_listing_game_name, .market_headertip a.market_headertip_item, [id^="guideSectionSelection_"]:not(#guideSectionSelection_0):not(#guideSectionSelection_-1), [id^="sharedfiles_filterselect_app_option_"]:not(#sharedfiles_filterselect_app_option_0), q.ellipsis, .workshopItemTitle, .review_box .content, .apphub_CardTextContent, .blotter_author_block a, .blotter_daily_rollup_line a, .blotter_voters_names a, .blotter_gamepurchase_details a, .blotter_gamepurchase_text, .dynamiclink_name, .dynamiclink_description, .dynamiclink_authorname, .commentthread_comment_text, .commentthread_comment_author, .guide_showcase_title, .favorite_badge_description .name, .game_name, .responsive_body_text, .blotter_screenshot_title, bdi, .actual_persona_name, .persona_name:not(.persona_level), .profile_summary, .showcase_notes, .showcase_item_detail_title, textarea, input, [contenteditable="true"]';
 	const isComm = (z: string) => z === 'Сообщество' || z === 'Профиль';
 	// Выключэнні з выключэнняў: службовы тэкст усярэдзіне блокаў з імёнамі (статус, дата, акно імёнаў)
 	const INCL_COMM = '.apphub_CardTextContent .date_posted, .apphub_CardTextContent .received_compensation, .apphub_CardTextContent .early_access_review, #NamePopup, #abuseForm, .commentthread_comment_timestamp, .friendSmallText, .commentthread_comment_actions';
@@ -280,7 +280,7 @@ function mainWorld(P: Record<string, string[][]>, D: Record<string, any[][]>, TB
 	// Тэксты карыстальнікаў (каментарыі, допісы форуму, агляды, апісанні профілю, імёны) — не чапаем
 	// ні ў адной зоне і ні адным спосабам (поўны радок, складзены блок, загаловак, дакладнае супадзенне).
 	// Выключэнне — толькі службовыя часткі ўнутры іх (INCL_COMM: дата, «Прадукт атрыманы бясплатна» і г.д.).
-	const USER = '.commentthread_comment_text, .commentthread_comment_author, .forum_op .content, .forum_op .topic, .forum_topic_name, .forum_topic_op, .searchresult_forum_link, .review_box .content, .apphub_CardTextContent, .profile_summary, .blotter_gamepurchase_text, .dynamiclink_name, .dynamiclink_description, .dynamiclink_authorname, .workshopItemTitle, .guide_showcase_title, .blotter_screenshot_title, .actual_persona_name, .persona_name:not(.persona_level), .market_listing_item_name, bdi';
+	const USER = '.commentthread_comment_text, .commentthread_comment_author, .forum_op .content, .forum_op .topic, .forum_topic_name, .forum_topic_op, .searchresult_forum_link, .review_box .content, .apphub_CardTextContent, .profile_summary, .showcase_notes, .blotter_gamepurchase_text, .dynamiclink_name, .dynamiclink_description, .dynamiclink_authorname, .workshopItemTitle, .guide_showcase_title, .blotter_screenshot_title, .actual_persona_name, .persona_name:not(.persona_level), .market_listing_item_name, bdi';
 	const userText = (el: Element) => !!el.closest(USER) && !el.closest(INCL_COMM);
 	const DATES = '.forum_topic_lastpost, .discussions_forumlist_lastpost span, .date_posted, .tradehistory_date, .commentthread_comment_timestamp, .detailsStatsContainerRight, .recommendation_date, .review_box .posted, #global_hover_content .hover_release span, .tab_item_release_date, .top_new_releases_date, .release_date .date, #appHeaderGridContainer .grid_content';
 	const SKIP = /^(SCRIPT|STYLE|TEXTAREA|INPUT|NOSCRIPT|CODE|PRE)$/;
@@ -325,6 +325,8 @@ function mainWorld(P: Record<string, string[][]>, D: Record<string, any[][]>, TB
 		}
 		if (p.closest(HOME_LABELS)) return 'Главная';
 		if (activityMenu(p)) return 'Сообщество';
+		// рэдактар вітрын: перадпрагляды вітрын і дыялогі выбару (гульня, прадмет, дасягненне…)
+		if (location.hostname === 'steamcommunity.com' && /^\/(?:id|profiles)\/[^/]+\/edit\/showcases/.test(location.pathname) && p.closest('#showcases, .newmodal')) return 'Профиль';
 		for (const [z, sel] of ZONES) if (p.closest(sel)) return z;
 		return null;
 	}
@@ -349,6 +351,19 @@ function mainWorld(P: Record<string, string[][]>, D: Record<string, any[][]>, TB
 		return TNA![k] || null;
 	}
 	const tagName = (v: string): string | null => { const k = v.trim().toLowerCase(); return (TN && TN[k]) || tagAny(k); };
+	// Шаблоны з назвай меткі («Гульні: %1$s», «Бо вы гуляеце ў гульні з меткай «%1$s»»): Steam бярэ ўжо перакладзены
+	// шаблон, але падстаўляе ў яго назву меткі на мове інтэрфейсу — перакладаем гэтую назву.
+	const TAG_TPL: [RegExp, string][] = [];
+	for (const k of ['Sale_PersonalizedCarousel_Section_title', 'Sale_PersonalizedCarousel_Section_subtitle', 'SpecialsPage_ExploreTagGames']) {
+		for (const v of (HO.call(P, k) ? P[k] : [])) {
+			const be = v[0];
+			if (be && be.indexOf('%1$s') >= 0 && !TAG_TPL.some((x) => x[1] === be)) TAG_TPL.push([new RegExp('^' + esc(be).replace(/%1\\\$s/, '(.+?)') + '$', 'i'), be]);
+		}
+	}
+	function tagTpl(t: string): string | null {
+		for (const [re, be] of TAG_TPL) { const m = t.match(re); if (m) { const tg = tagName(m[1]); if (tg) return be.replace('%1$s', tg); } }
+		return null;
+	}
 	function trTag(raw: string): string | null {
 		const m = raw.match(/^([\s,·•|]*)(.*?)([\s,·•|]*)$/);
 		if (!m || !m[2]) return null;
@@ -404,10 +419,12 @@ function mainWorld(P: Record<string, string[][]>, D: Record<string, any[][]>, TB
 		if (r2 !== null) return r2;
 		const rv = RV[h(t)];
 		if (rv) return rv;
+		if (TAG_TPL.length && (z === 'SSR' || z === 'React')) { const tt = tagTpl(t); if (tt) return tt; }
 		if (z === 'Главная' && ZD_HOME_ANY) { const r3 = zd1(ZD_HOME_ANY, t, p); if (r3 !== null) return r3; }
-		// новыя старонкі: меткі ў радках спіса жаданага — кнопкі з назвай тэга
+		// новыя старонкі: меткі ў радках спіса жаданага — кнопкі з назвай тэга, пігулкі «Вашы меткі» на старонцы зніжак
+		// і загаловак выбранай меткі (асобны элемент без укладзеных тэгаў па-за карткамі гульняў)
 		// (а таксама пункты выпадальнага спіса меткі ў календары і подпісы дыяграмы ў «Выніках года»)
-		if ((z === 'SSR' && (p.tagName === 'BUTTON' || p.tagName === 'A' || p.closest('[role="option"]'))) || (z === 'React' && p.closest('foreignObject'))) { const tg = tagName(t); if (tg) return tg; }
+		if ((z === 'SSR' && (p.tagName === 'BUTTON' || p.tagName === 'A' || p.closest('[role="option"]') || (p.childElementCount === 0 && !p.closest('.ImpressionTrackedElement')))) || (z === 'React' && p.closest('foreignObject'))) { const tg = tagName(t); if (tg) return tg; }
 		// блок узроставага рэйтынгу: спіс праз коску («Внутриигровые покупки, Внутриигровой чат»)
 		if (p.closest(RATING)) { const rl = listTr(t, z, p); if (rl) return rl; }
 		// у React — толькі тэкст з лічбамі (каляндар), каб не чапаць назвы
@@ -778,14 +795,51 @@ function injectMainWorld(src: string) {
 	else if (!w.__beWebWarned) { w.__beWebWarned = true; console.warn(LOG, 'код перакладу не запусціўся на старонцы (магчыма, яго заблакавала CSP або адбылася памылка); паспрабую яшчэ раз', location.href); }
 }
 
-// Банер на галоўнай Крамы (вялікая карцінка зверху з тэкстам, намаляваным у самой выяве).
-// Для вядомых банераў падстаўляем беларускую версію (plugin/webview/banners/<id>.jpg і <id>_mobile.jpg,
-// id — тэчка банера ў адрасе .../clusters/frontpage/<id>/...). Калі Steam зменіць банер, id не супадзе — застанецца арыгінал.
+// Банеры на галоўнай Крамы з тэкстам, намаляваным у самой выяве: вялікі банер зверху (карцінка, часам відэа)
+// і паласа пад каруселлю (takeunder). Для вядомых банераў падстаўляем беларускую версію з plugin/webview/banners
+// (id — тэчка банера ў адрасе .../clusters/frontpage/<id>/... або .../clusters/takeunder/<id>/...).
+// Калі Steam зменіць банер, id не супадзе — застанецца арыгінал.
+type Banner = { id: string; k: string; d: string; m: string; v?: string; vm?: string };
 function swapBanners() {
 	if (location.hostname !== 'store.steampowered.com' || !/^\/?$/.test(location.pathname)) return;
-	const list = BANNERS as { id: string; d: string; m: string }[];
+	const list = BANNERS as Banner[];
 	if (!list || !list.length) return;
-	const find = (u: string) => { const m = u.match(/\/clusters\/frontpage\/([0-9a-f]+)\/[^'")]*?page_bg_(mobile_)?[a-z]+\.jpg[^'")]*/); if (!m) return null; const b = list.find((x) => x.id === m[1]); return b ? { url: m[0], data: m[2] ? b.m : b.d } : null; };
+	const byId = (k: string, id: string) => list.find((x) => x.k === k && x.id === id);
+	const find = (u: string) => { const m = u.match(/\/clusters\/frontpage\/([0-9a-f]+)\/[^'")]*?page_bg_(mobile_)?[a-z]+\.jpg[^'")]*/); if (!m) return null; const b = byId('frontpage', m[1]); return b ? { url: m[0], data: m[2] ? b.m : b.d } : null; };
+	// відэа — праз blob: адрас (ствараецца адзін раз, data: для відэа браўзер чытае горш)
+	const blobs: Record<string, string> = {};
+	const blobOf = (data: string) => {
+		if (blobs[data]) return blobs[data];
+		const i = data.indexOf(','); const bin = atob(data.slice(i + 1)); const u8 = new Uint8Array(bin.length);
+		for (let j = 0; j < bin.length; j++) u8[j] = bin.charCodeAt(j);
+		return (blobs[data] = URL.createObjectURL(new Blob([u8], { type: data.slice(5, data.indexOf(';')) })));
+	};
+	const fixVideo = (v: HTMLVideoElement) => {
+		if ((v as any).__be) return;
+		const srcs = [v.getAttribute('src') || ''].concat(Array.from(v.querySelectorAll('source')).map((x) => x.getAttribute('src') || ''));
+		let id = '', mob = false;
+		for (const u of srcs) { const m = u.match(/\/clusters\/frontpage\/([0-9a-f]+)\/[^'")]*?page_bg_(mobile_)?[a-z]+\.(?:webm|mp4)/); if (m) { id = m[1]; mob = !!m[2]; break; } }
+		const b = id ? byId('frontpage', id) : undefined;
+		if (!b) return;
+		(v as any).__be = true;
+		if (b.v) {
+			v.querySelectorAll('source').forEach((x) => x.remove());
+			v.src = blobOf(mob ? (b.vm as string) : b.v);
+			try { v.load(); const pr = v.play(); if (pr && pr.catch) pr.catch(() => { /* */ }); } catch (e) { /* */ }
+		} else {
+			// беларускага відэа няма — хаваем арыгінальнае, застаецца перакладзеная карцінка пад ім
+			v.pause(); v.style.display = 'none';
+		}
+	};
+	const fixStyle = (st: HTMLStyleElement) => {
+		const t = st.textContent || '';
+		if (t.indexOf('/clusters/takeunder/') < 0) return;
+		const r = t.replace(/url\(\s*['"]?([^'")]*\/clusters\/takeunder\/([0-9a-f]+)\/[^'")]*?takeunder_(desktop|mobile)_[a-z]+\.jpg[^'")]*)['"]?\s*\)/g, (all, _u, id, kind) => {
+			const b = byId('takeunder', id);
+			return b ? 'url("' + (kind === 'mobile' ? b.m : b.d) + '")' : all;
+		});
+		if (r !== t) st.textContent = r;
+	};
 	const fix = () => {
 		document.querySelectorAll('.page_background_holder, .page_background_holder_mobile').forEach((e) => {
 			const st = (e as HTMLElement).style;
@@ -798,6 +852,8 @@ function swapBanners() {
 			const f = find(i.getAttribute('src') || '');
 			if (f) i.setAttribute('src', f.data);
 		});
+		document.querySelectorAll('#takeover_videos video, video.fullscreen-bg__video, video.fullscreen-bg__video_mobile').forEach((v) => fixVideo(v as HTMLVideoElement));
+		document.querySelectorAll('style').forEach((st) => fixStyle(st as HTMLStyleElement));
 	};
 	let queued = false;
 	const run = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; try { fix(); } catch (e) { /* */ } }); };

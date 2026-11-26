@@ -1,7 +1,7 @@
 [plugin]
 id = "by.dzedahey.steam-be"
 name = "Steam па-беларуску by Dzed Ahey"
-version = "0.8.2"
+version = "0.8.3"
 author = "Dzed Ahey"
 description = "Неафіцыйны беларускі пераклад кліента, крамы і супольнасці Steam. Аўтар: Dzed Ahey."
 

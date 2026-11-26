@@ -1,0 +1,9 @@
+{
+ "version": "v1.12.1",
+ "url": "https://github.com/SteamClientHomebrew/Installer/releases/download/v1.12.1/MillenniumInstaller-Windows.exe",
+ "sha256": "1a3baf49f20c321bdcc9421f5b7aab8c1e8a33792c93086463d148b502c1be3d",
+ "size": 3512688,
+ "signature": "Valid|CN=SignPath Foundation, O=SignPath Foundation, L=Lewes, S=Delaware, C=US|CA42C95372DD0D8A4213149D300CD750CDCD8572",
+ "published": "2026-04-05T16:31:59Z",
+ "checked": "2026-11-27 Windows Authenticode (независимый аудит) + подтверждение автора"
+}
